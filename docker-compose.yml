@@ -1,0 +1,13 @@
+version: '3'
+services:
+  jupyterlab-ds:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "/Users/shimasan/Documents/:/home/work"
+      - "/Users/shimasan/.jupyter:/root/.jupyter"
+    ports:
+      - "9022:9022"
+    tty: true
+    command: jupyter lab --ip=0.0.0.0 --port=9022 --allow-root --no-browser
